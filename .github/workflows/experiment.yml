@@ -1,0 +1,15 @@
+name: Validate standard branch name
+on:
+  push:
+    branches:
+      - '**'
+jobs:
+  branchName:
+    name: Hello World Job Name
+    runs-on: ubuntu-latest
+    outputs:
+      default: Hello World Ouput
+    steps:
+      - name: Hello World Step Title
+        shell: bash
+        run: echo 'Hello cmd'
