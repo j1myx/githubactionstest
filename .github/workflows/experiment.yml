@@ -13,6 +13,10 @@ jobs:
     outputs:
       default: Hello World Ouput
     steps:
-      - name: Hello World Step Title
-        shell: bash
-        run: echo 'Hello cmd'
+      - name: My package action
+        id: myPackage
+        uses: j1myx/githubactionbase@latest
+        with:
+          word: 'Hello World'
+      - name: Get the output time
+        run: echo "The time was ${{ steps.myPackage.outputs.result }}"
