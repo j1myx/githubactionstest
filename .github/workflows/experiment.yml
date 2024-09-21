@@ -1,4 +1,4 @@
-name: Validate standard branch name
+name: Code Review
 on:
   push:
     branches:
@@ -7,8 +7,60 @@ on:
     branches:
       - '**'
 jobs:
-  branchName:
-    name: Hello World Job Name
+  m1:
+    name: M1 - Manejo de commits
+    runs-on: ubuntu-latest
+    outputs:
+      default: Hello World Ouput
+    steps:
+      - name: My package action
+        id: myPackage
+        uses: j1myx/githubactionbase@v1.5
+        with:
+          word: 'jeje'
+      - name: Get the output time
+        run: echo "The time was ${{ steps.myPackage.outputs.result }}"
+  m2:
+    name: M2 - Creación de Pull Request
+    runs-on: ubuntu-latest
+    outputs:
+      default: Hello World Ouput
+    steps:
+      - name: My package action
+        id: myPackage
+        uses: j1myx/githubactionbase@v1.5
+        with:
+          word: 'jeje'
+      - name: Get the output time
+        run: echo "The time was ${{ steps.myPackage.outputs.result }}"
+  m3:
+    name: M3 - Revisión de Pull Request
+    runs-on: ubuntu-latest
+    outputs:
+      default: Hello World Ouput
+    steps:
+      - name: My package action
+        id: myPackage
+        uses: j1myx/githubactionbase@v1.5
+        with:
+          word: 'jeje'
+      - name: Get the output time
+        run: echo "The time was ${{ steps.myPackage.outputs.result }}"
+  m4:
+    name: M4 - Observaciones en PR
+    runs-on: ubuntu-latest
+    outputs:
+      default: Hello World Ouput
+    steps:
+      - name: My package action
+        id: myPackage
+        uses: j1myx/githubactionbase@v1.5
+        with:
+          word: 'jeje'
+      - name: Get the output time
+        run: echo "The time was ${{ steps.myPackage.outputs.result }}"
+  m5:
+    name: M5 - PR abierto más de 7 días
     runs-on: ubuntu-latest
     outputs:
       default: Hello World Ouput
