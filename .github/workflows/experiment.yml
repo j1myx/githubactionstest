@@ -15,7 +15,7 @@ jobs:
     steps:
       - name: My package action
         id: myPackage
-        uses: j1myx/githubactionbase@v1.4
+        uses: j1myx/githubactionbase@v1.5
         with:
           word: 'jeje'
       - name: Get the output time
