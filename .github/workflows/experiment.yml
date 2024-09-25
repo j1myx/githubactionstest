@@ -11,64 +11,69 @@ jobs:
     name: M1 - Manejo de commits
     runs-on: ubuntu-latest
     outputs:
-      default: Hello World Ouput
+      record: ${{ steps.m1.outputs.value }}
     steps:
-      - name: My package action
-        id: myPackage
-        uses: j1myx/githubactionbase@v1.5
+      - name: M1
+        id: m1
+        uses: j1myx/githubactionbase@v1.8
         with:
-          word: 'jeje'
-      - name: Get the output time
-        run: echo "The time was ${{ steps.myPackage.outputs.result }}"
+          metric: 'm1'
   m2:
     name: M2 - Creación de Pull Request
     runs-on: ubuntu-latest
     outputs:
-      default: Hello World Ouput
+      record: ${{ steps.m2.outputs.value }}
     steps:
-      - name: My package action
-        id: myPackage
-        uses: j1myx/githubactionbase@v1.5
+      - name: M2
+        id: m2
+        uses: j1myx/githubactionbase@v1.8
         with:
-          word: 'jeje'
-      - name: Get the output time
-        run: echo "The time was ${{ steps.myPackage.outputs.result }}"
+          metric: 'm2'
   m3:
     name: M3 - Revisión de Pull Request
     runs-on: ubuntu-latest
     outputs:
-      default: Hello World Ouput
+      record: ${{ steps.m3.outputs.value }}
     steps:
-      - name: My package action
-        id: myPackage
-        uses: j1myx/githubactionbase@v1.5
+      - name: M3
+        id: m3
+        uses: j1myx/githubactionbase@v1.8
         with:
-          word: 'jeje'
-      - name: Get the output time
-        run: echo "The time was ${{ steps.myPackage.outputs.result }}"
+          metric: 'm3'
   m4:
     name: M4 - Observaciones en PR
     runs-on: ubuntu-latest
     outputs:
-      default: Hello World Ouput
+      record: ${{ steps.m4.outputs.value }}
     steps:
-      - name: My package action
-        id: myPackage
-        uses: j1myx/githubactionbase@v1.5
+      - name: M4
+        id: m4
+        uses: j1myx/githubactionbase@v1.8
         with:
-          word: 'jeje'
-      - name: Get the output time
-        run: echo "The time was ${{ steps.myPackage.outputs.result }}"
+          metric: 'm4'
   m5:
-    name: M5 - PR abierto más de 7 días
+    name: M5 - PR abierto más de 5 días
     runs-on: ubuntu-latest
     outputs:
-      default: Hello World Ouput
+      record: ${{ steps.m5.outputs.value }}
     steps:
-      - name: My package action
-        id: myPackage
-        uses: j1myx/githubactionbase@v1.5
+      - name: M5
+        id: m5
+        uses: j1myx/githubactionbase@v1.8
         with:
-          word: 'jeje'
-      - name: Get the output time
-        run: echo "The time was ${{ steps.myPackage.outputs.result }}"
+          metric: 'm5'
+  total:
+    name: Total
+    runs-on: ubuntu-latest
+    needs: [m1, m2, m3, m4, m5]
+    steps:
+      - name: Total
+        id: total
+        uses: j1myx/githubactionbase@v1.8
+        with:
+          metric: 'total'
+          m1: ${{needs.m1.outputs.record}}
+          m2: ${{needs.m2.outputs.record}}
+          m3: ${{needs.m3.outputs.record}}
+          m4: ${{needs.m4.outputs.record}}
+          m5: ${{needs.m5.outputs.record}}
