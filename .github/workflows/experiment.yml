@@ -15,7 +15,7 @@ jobs:
     steps:
       - name: M1
         id: m1
-        uses: j1myx/githubactionbase@v1.8
+        uses: j1myx/githubactionbase@main
         with:
           metric: 'm1'
   m2:
@@ -26,7 +26,7 @@ jobs:
     steps:
       - name: M2
         id: m2
-        uses: j1myx/githubactionbase@v1.8
+        uses: j1myx/githubactionbase@main
         with:
           metric: 'm2'
   m3:
@@ -37,7 +37,7 @@ jobs:
     steps:
       - name: M3
         id: m3
-        uses: j1myx/githubactionbase@v1.8
+        uses: j1myx/githubactionbase@main
         with:
           metric: 'm3'
   m4:
@@ -48,7 +48,7 @@ jobs:
     steps:
       - name: M4
         id: m4
-        uses: j1myx/githubactionbase@v1.8
+        uses: j1myx/githubactionbase@main
         with:
           metric: 'm4'
   m5:
@@ -59,7 +59,7 @@ jobs:
     steps:
       - name: M5
         id: m5
-        uses: j1myx/githubactionbase@v1.8
+        uses: j1myx/githubactionbase@main
         with:
           metric: 'm5'
   total:
@@ -69,7 +69,7 @@ jobs:
     steps:
       - name: Total
         id: total
-        uses: j1myx/githubactionbase@v1.8
+        uses: j1myx/githubactionbase@main
         with:
           metric: 'total'
           m1: ${{needs.m1.outputs.record}}
