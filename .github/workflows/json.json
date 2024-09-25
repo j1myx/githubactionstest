@@ -337,7 +337,7 @@
             "number": 1,
             "patch_url": "https://github.com/j1myx/githubactionstest/pull/1.patch",
             "rebaseable": null,
-            "requested_reviewers": [],
+            "requested_reviewers": [{}],
             "requested_teams": [],
             "review_comment_url": "https://api.github.com/repos/j1myx/githubactionstest/pulls/comments{/number}",
             "review_comments": 0,
