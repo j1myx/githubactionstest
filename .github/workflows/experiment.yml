@@ -1,9 +1,9 @@
 name: Validate standard branch name
 on:
+  workflow_dispatch:
   push:
     branches:
       - '**'
-  workflow_dispatch:
 jobs:
   branchName:
     name: Hello World Job Name
