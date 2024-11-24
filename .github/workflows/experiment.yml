@@ -11,7 +11,7 @@ on:
       pullRequestId:
         description: 'Pull request ID'
         required: true
-        type: number
+        type: string
 jobs:
   m1:
     name: M1 - Manejo de commits
