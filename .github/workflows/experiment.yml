@@ -7,6 +7,11 @@ on:
     branches:
       - '**'
   workflow_dispatch:
+    inputs:
+      pullRequestId:
+        description: 'Pull request ID'
+        required: true
+        type: number
 jobs:
   m1:
     name: M1 - Manejo de commits
