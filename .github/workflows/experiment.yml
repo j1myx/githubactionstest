@@ -13,6 +13,18 @@ on:
         required: true
         type: string
 jobs:
+  m0:
+    name: M0 - Estandar de commits y branch
+    runs-on: ubuntu-latest
+    outputs:
+      record: ${{ steps.m0.outputs.value }}
+    steps:
+      - name: M0
+        id: m0
+        uses: j1myx/githubactionbase@main
+        with:
+          metric: 'm0'
+          pullRequestId: ${{ inputs.pullRequestId }}
   m1:
     name: M1 - Manejo de commits
     runs-on: ubuntu-latest
