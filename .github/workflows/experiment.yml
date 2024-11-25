@@ -24,7 +24,7 @@ jobs:
         uses: j1myx/githubactionbase@main
         with:
           metric: 'm1'
-          pullRequestId: 'jojo'
+          pullRequestId: ${{ inputs.pullRequestId }}
   m2:
     name: M2 - Creación de Pull Request
     runs-on: ubuntu-latest
@@ -36,6 +36,7 @@ jobs:
         uses: j1myx/githubactionbase@main
         with:
           metric: 'm2'
+          pullRequestId: ${{ inputs.pullRequestId }}
   m3:
     name: M3 - Revisión de Pull Request
     runs-on: ubuntu-latest
@@ -47,6 +48,7 @@ jobs:
         uses: j1myx/githubactionbase@main
         with:
           metric: 'm3'
+          pullRequestId: ${{ inputs.pullRequestId }}
   m4:
     name: M4 - Observaciones en PR
     runs-on: ubuntu-latest
@@ -58,6 +60,7 @@ jobs:
         uses: j1myx/githubactionbase@main
         with:
           metric: 'm4'
+          pullRequestId: ${{ inputs.pullRequestId }}
   m5:
     name: M5 - PR abierto más de 5 días
     runs-on: ubuntu-latest
@@ -69,6 +72,7 @@ jobs:
         uses: j1myx/githubactionbase@main
         with:
           metric: 'm5'
+          pullRequestId: ${{ inputs.pullRequestId }}
   total:
     name: Total
     runs-on: ubuntu-latest
