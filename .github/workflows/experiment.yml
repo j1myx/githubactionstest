@@ -24,6 +24,7 @@ jobs:
         uses: j1myx/githubactionbase@main
         with:
           metric: 'm1'
+          pullRequestId: 'jojo'
   m2:
     name: M2 - Creación de Pull Request
     runs-on: ubuntu-latest
